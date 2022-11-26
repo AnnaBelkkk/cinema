@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+*{
+    font-family: 'EB Garamond', serif;
+}
+body {
+    background: black;
+    background-image: url(../img/фон2.png);
+    background-size: cover;
+}
+
+.wrapper{
+    width: 1500px;
+    border: 0px solid green;
+    margin: auto;
+    height: 2000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header__content{
+    border: 0px solid pink;
+    width: 1400px;
+    height: 50px;
+    margin: 0 auto;
+    font-size: 40px;
+}
+.main__content{
+    width: 1400px;
+    border: 0px solid red;
+    height: 1850px;
+    margin: 20px auto;
+
+}
+.content{
+    border: 0px solid orange;
+    width:1400px;
+    height: 50px;
+
+}
+.title,.title2,.title3{
+    color: white;
+    font-family: 'EB Garamond', serif;
+    text-align: center;
+}
+.title2{
+    font-size: 30px;
+}
+.imgcart{
+    width: 350px;
+    height: 250px;
+    border-radius: 8px;
+    box-shadow:0px 5px 5px #000;
+}
+.imgandtext{
+    width: 350px;
+    height:360px;
+    color: white;
+}
+.titlecard{
+    position: relative;
+    top: 35px;
+    left: 20px;
+    z-index: 1;
+    font-family: 'EB Garamond', serif;
+    font-weight: lighter;
+    font-size: 20px;
+}
+.carts2{
+    margin-top:100px;
+    border:0px solid green;
+    display: flex;
+    justify-content: space-around;
+
+}
+.carts3{
+    margin-top:100px;
+    border:0px solid green;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.carts1{
+    display: flex;
+    margin: auto;
+    border: 0px solid orange;
+    justify-content: space-around;
+
+}
+.textcard{
+    font-family: 'EB Garamond', serif;
+    margin-top: 10px;
+    font-size: 17px;
+    font-weight: 100;
+}
+.content2 {
+    margin-top: 40px;
+}
+.menu {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.btn{
+    font-family: 'EB Garamond', serif;
+    color: white;
+    background: #28203D;
+    width: 120px;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 30px;
+}
+
+.header_menu{
+    color: white;
+    text-decoration: none;
+}
+.opt{
+    background: #28203D;
+    color: white;
+    font-family: 'EB Garamond', serif;
+    border:0px;
+    border-radius: 10px;
+    height: 30px;
+    font-size: 20px;
+    width: 220px;
+}
+select{
+    text-align: center;
+}
+.opt:hover,.btn:hover{
+    background: #4A3B70;
+}
+
+.footer__content{
+   /*background-color:  #4A3B70;*/
+    height: 100px;
+    margin: 20px auto;
+   opacity: 0.2;
+}
+.title3{
+    text-align: left;
+    font-size: 40px;
+}
+a{
+    text-decoration: none;
+}
+
+.play{
+    margin-top: 150px;
+    border: 0px solid darkred;
+    display: flex;
+    justify-content: center;
+}
+
