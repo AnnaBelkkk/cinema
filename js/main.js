@@ -8,7 +8,7 @@ movies = [{
         CartId: 1,
         year: 2004,
         age: 16,
-        genre: 'drama',
+        genre: 'драма',
         rating: 8,
         img: "../img/cart1.jpg"
     },
@@ -17,7 +17,7 @@ movies = [{
         CartId: 2,
         year: 2011,
         age: 18,
-        genre: 'thriller',
+        genre: 'триллер',
         rating: 7
     },
     {
@@ -25,7 +25,7 @@ movies = [{
         CartId: 3,
         year: 2017,
         age: 16,
-        genre: 'thriller',
+        genre: 'триллер',
         rating: 6
     },
     {
@@ -33,7 +33,7 @@ movies = [{
         CartId: 4,
         year: 1999,
         age: 16,
-        genre: 'crime',
+        genre: 'криминал',
         rating: 9
     },
     {
@@ -41,7 +41,7 @@ movies = [{
         CartId: 5,
         year: 1999,
         age: 18,
-        genre: 'crime',
+        genre: 'криминал',
         rating: 9
     },
     {
@@ -49,7 +49,7 @@ movies = [{
         CartId: 6,
         year: 2017,
         age: 18,
-        genre: 'comedy',
+        genre: 'комедия',
         rating: 9
     },
     {
@@ -57,7 +57,7 @@ movies = [{
         CartId: 7,
         year: 1999,
         age: 16,
-        genre: 'horror',
+        genre: 'ужасы',
         rating: 8
     },
     {
@@ -65,7 +65,7 @@ movies = [{
         CartId: 8,
         year: 2019,
         age: 16,
-        genre: 'detective',
+        genre: 'детектив',
         rating: 8
     },
     {
@@ -73,7 +73,7 @@ movies = [{
         CartId: 9,
         year: 2006,
         age: 18,
-        genre: 'horror',
+        genre: 'ужасы',
         rating: 7
     }
 ]
@@ -105,13 +105,13 @@ function films(moviesForPaint) {
          <div class="imgandtext" id="cart${item.CartId}" onclick="getLocationHref(${item.CartId})">
                         <p class="titlecard">${item.title}</p>
                         <img class="imgcart" src="${'../img/cart'+item.CartId+'.jpg'}" alt="#">
-                        <div class="genre">${item.genre}</div>
-                        <div class="raiting">${item.rating}</div>
+                        <div class="genre">жанр: ${item.genre}</div>
+                        <div class="raiting">рейтинг: ${item.rating}</div>
          </div>`
         cartsCont.append(carts1);
         content2.append(cartsCont);
     })
-
+    debugger
 }
 films(movies)
 
@@ -124,7 +124,7 @@ function onFilterChange(id, name) {
     let filterValue = document.getElementById(id).value;
     let filter = { filterName: id, value: filterValue, name: name };
     let fiterIndex = activeFilters.findIndex(t => t.filterName == id);
-    if (filterValue == "default") {
+    if (filterValue === "default") {
         if (fiterIndex > -1) {
             activeFilters.splice(fiterIndex, 1);
         }
