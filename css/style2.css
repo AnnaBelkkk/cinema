@@ -1,0 +1,14 @@
+body{
+    background-color: black;
+}
+.sss{
+    width: 700px;
+    height: 700px;
+    margin: 0 auto;
+}
+.container{
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+    border: 0px solid red;
+}

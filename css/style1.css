@@ -1,7 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');*/
+/**{*/
+/*    font-family: 'EB Garamond', serif;*/
+/*}*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
 *{
-    font-family: 'EB Garamond', serif;
+    font-family: 'Cormorant Garamond', serif;
 }
+
 body {
     background: black;
     background-image: url(../img/фон2.png);

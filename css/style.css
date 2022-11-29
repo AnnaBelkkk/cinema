@@ -1,7 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');*/
+/**{*/
+/*    font-family: 'EB Garamond', serif;*/
+/*}*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
 *{
-    font-family: 'EB Garamond', serif;
+    font-family: 'Cormorant Garamond', serif;
 }
+
 body {
     background: black;
     background-image: url(../img/фон2.png);
@@ -12,7 +17,6 @@ body {
     width: 1500px;
     border: 0px solid green;
     margin: auto;
-    height: 2000px;
     display: flex;
     flex-direction: column;
 }
@@ -27,7 +31,6 @@ body {
 .main__content{
     width: 1400px;
     border: 0px solid red;
-    height: 1850px;
     margin: 20px auto;
 
 }
@@ -39,7 +42,6 @@ body {
 }
 .title,.title2,.title3{
     color: white;
-    font-family: 'EB Garamond', serif;
     text-align: center;
 }
 .title2{
@@ -51,6 +53,9 @@ body {
     border-radius: 8px;
     box-shadow:0px 5px 5px #000;
 }
+.imgcart:hover{
+    box-shadow:8px 10px 10px #28203D;
+}
 .imgandtext{
     width: 350px;
     height:360px;
@@ -61,7 +66,6 @@ body {
     top: 35px;
     left: 20px;
     z-index: 1;
-    font-family: 'EB Garamond', serif;
     font-weight: lighter;
     font-size: 20px;
 }
@@ -88,7 +92,6 @@ body {
 
 }
 .textcard{
-    font-family: 'EB Garamond', serif;
     margin-top: 10px;
     font-size: 17px;
     font-weight: 100;
@@ -105,13 +108,12 @@ body {
 
 }
 .btn{
-    font-family: 'EB Garamond', serif;
     color: white;
     background: #28203D;
     width: 120px;
-    height: 40px;
+    height: 30px;
     border-radius: 8px;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .header_menu{
@@ -121,7 +123,6 @@ body {
 .opt{
     background: #28203D;
     color: white;
-    font-family: 'EB Garamond', serif;
     border:0px;
     border-radius: 10px;
     height: 30px;
