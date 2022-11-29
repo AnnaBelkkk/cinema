@@ -17,7 +17,6 @@ body {
     width: 1500px;
     border: 0px solid green;
     margin: auto;
-    height: 2000px;
     display: flex;
     flex-direction: column;
 }
@@ -32,7 +31,6 @@ body {
 .main__content{
     width: 1400px;
     border: 0px solid red;
-    height: 1850px;
     margin: 20px auto;
 
 }

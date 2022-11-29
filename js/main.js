@@ -77,8 +77,7 @@ movies = [{
         rating: 7
     }
 ]
-let filteredMovies;
-filteredMovies = movies;
+let filteredMovies = movies;
 let activeFilters = [];
 
 console.log(movies[0])
@@ -86,62 +85,70 @@ console.log(movies[0])
 
 
 function films(moviesForPaint) {
-    document.querySelector(".content2").innerHTML = '';
+    document.querySelector(".content2").innerHTML = ''; //очищаем
     if (moviesForPaint == null) {
         moviesForPaint = movies;
     }
     const content2 = document.querySelector(".content2");
     let i = 0;
     let cartsCont = document.createElement("div");
-    moviesForPaint.forEach(item => {
+    moviesForPaint.forEach(item => { //проходимся по объектам массива
         i++;
         if (i > 3) {
-            i = 1;
-            cartsCont = document.createElement("div");
+            i = 1; // когда i достигает 3, мы откатываем в начало, чтобы продолжить разделение
+            cartsCont = document.createElement("div"); //создаем новый контейнер, когда i доходит до 3
         }
-        cartsCont.classList.add(`carts${i}`);
-        let carts1 = document.createElement("div");
-        carts1.innerHTML = `
+        cartsCont.classList.add(`carts${i}`); //добавляем классы
+        let carts1 = document.createElement("div"); //для каждой карточки добавляем дивы
+        carts1.innerHTML = ` 
          <div class="imgandtext" id="cart${item.CartId}" onclick="getLocationHref(${item.CartId})">
                         <p class="titlecard">${item.title}</p>
                         <img class="imgcart" src="${'../img/cart'+item.CartId+'.jpg'}" alt="#">
                         <div class="genre">жанр: ${item.genre}</div>
                         <div class="raiting">рейтинг: ${item.rating}</div>
-         </div>`
-        cartsCont.append(carts1);
-        content2.append(cartsCont);
+         </div>` //перезаписываем в блок кусок кода
+        cartsCont.append(carts1); //добавляем карточку в общий контейнер, где по три карточки
+        content2.append(cartsCont);  //добавляем блоки с карточками в другой большой общий блок
     })
-    debugger
 }
 films(movies)
 
+
+
 function getLocationHref(t) {
     window.location.href = `../page${t}/index.html`;
-    debugger;
-}
+} //функция для перехода на новую страницу при клике на карточку
 
+
+//функция на изменение значений в селекте, передавая айди и имя
 function onFilterChange(id, name) {
-    let filterValue = document.getElementById(id).value;
+    let filterValue = document.getElementById(id).value; //получаем значение по айди
     let filter = { filterName: id, value: filterValue, name: name };
-    let fiterIndex = activeFilters.findIndex(t => t.filterName == id);
+    let fiterIndex = activeFilters.findIndex(t => t.filterName == id); //находим индекс массива соответсвующий функции,находим индекс элементов в коллекции, где элемент.фильтрнейм равен ид
+    //так как мы берем пустой массив, он будет в дальнейшем заполнятся фильтрами, которые мы выбираем
     if (filterValue === "default") {
         if (fiterIndex > -1) {
             activeFilters.splice(fiterIndex, 1);
         }
         return;
+        //удаляем из активных фильтров тот, который поменялся на дефолт
     }
+    //если элемента нет,
     if (fiterIndex === -1) {
-        activeFilters.push(filter);
-        filterCarts(filter);
+        activeFilters.push(filter); //то он записывается в этот массив
+        filterCarts(filter); //применяем уже другой созданный фильтр
     } else {
+        //ссылаемся на начальный массив, полученный массив отфильтровываем, чтобы не менять изначальный массив
         filteredMovies = movies;
         activeFilters.splice(fiterIndex, 1);
         activeFilters.push(filter);
         filterCarts(filter, true);
-    }
-    onSortChange("ratingFilter", "rating");
+    } //при изменении фильтра перерисовываем фильтры
+    onSortChange("ratingFilter", "rating"); //запуск функции по сортировке
 }
+//проще говоря фильтруем отфильтрованные объекты
 
+//фильтровать массив, перерисовывать или добавлять фильтры
 function filterCarts(filter, needRefilter) {
     let buffColl = movies;
     if (activeFilters.length > 0 && !needRefilter) {
@@ -155,26 +162,32 @@ function filterCarts(filter, needRefilter) {
     filteredMovies = buffColl.filter(t => t[filter.name] == filter.value);
 }
 
+
+
 function filterResetClick() {
-    let filterEls = document.getElementsByClassName("opt");
+    let filterEls = document.getElementsByClassName("opt"); //для каждого элемента с классом опт ставим дефоль
     for (let i = 0; i < filterEls.length; i++) {
         filterEls[i].value = "default";
     }
-    filteredMovies = movies;
-    activeFilters = [];
-    films(movies);
+    filteredMovies = movies; //фильтрованому массиву изначальный массив, для обнуления
+    activeFilters = []; //очещаем массив с использованными фильтрами
+    films(movies); //снова отрисовываем
 }
 
+
+
 function onSortChange(id, name) {
+    //не указана сортировка, то вывод как уже отсортировалось
     let filterValue = document.getElementById(id).value;
     let sortedMovies = [];
     filteredMovies.forEach(item => {
         sortedMovies.push(item);
     });
+    // если сортировка указана, то отсортировывем
     if (filterValue == "asc") {
-        sortedMovies.sort((a, b) => a.rating - b.rating);
+        sortedMovies.sort((a, b) => a.rating - b.rating); //по возрастанию
     } else if (filterValue == "desc") {
-        sortedMovies.sort((a, b) => b.rating - a.rating);
+        sortedMovies.sort((a, b) => b.rating - a.rating);//по убыванию
     }
     films(sortedMovies);
 }
