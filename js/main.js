@@ -105,7 +105,8 @@ function films(moviesForPaint) {
                         <p class="titlecard">${item.title}</p>
                         <img class="imgcart" src="${'../img/cart'+item.CartId+'.jpg'}" alt="#">
                         <div class="genre">жанр: ${item.genre}</div>
-                        <div class="raiting">рейтинг: ${item.rating}</div>
+                        <div class="rating">рейтинг: ${item.rating}</div>
+                        <div class="year">год: ${item.year}</div>
          </div>` //перезаписываем в блок кусок кода
         cartsCont.append(carts1); //добавляем карточку в общий контейнер, где по три карточки
         content2.append(cartsCont);  //добавляем блоки с карточками в другой большой общий блок
@@ -176,7 +177,7 @@ function filterResetClick() {
 
 
 
-function onSortChange(id, name) {
+function onSortChange(id) {
     //не указана сортировка, то вывод как уже отсортировалось
     let filterValue = document.getElementById(id).value;
     let sortedMovies = [];
@@ -191,3 +192,14 @@ function onSortChange(id, name) {
     }
     films(sortedMovies);
 }
+
+//сортировка для кнопки новинки
+function newMovies (id) {
+    let newFilms = [];
+    filteredMovies.forEach(item => {
+        newFilms.push(item);
+        newFilms.sort((a, b) => b.year - a.year);
+    });
+    films(newFilms);
+}
+

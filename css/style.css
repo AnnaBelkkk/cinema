@@ -60,6 +60,9 @@ body {
     width: 350px;
     height:360px;
     color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 .titlecard{
     position: relative;
@@ -81,7 +84,6 @@ body {
     border:0px solid green;
     display: flex;
     justify-content: space-around;
-
 }
 
 .carts1{
@@ -89,7 +91,7 @@ body {
     margin: auto;
     border: 0px solid orange;
     justify-content: space-around;
-
+    margin-top:20px;
 }
 .textcard{
     margin-top: 10px;
@@ -155,5 +157,8 @@ a{
     border: 0px solid darkred;
     display: flex;
     justify-content: center;
+}
+.rating,.genre,.year{
+    font-size: 20px;
 }
 
