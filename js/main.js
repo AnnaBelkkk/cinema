@@ -1,9 +1,6 @@
 // "use strict";
-let voz = document.getElementById("voz");
-let movies;
-
 //массив с объектами
-movies = [{
+let movies = [{
         title: "Вечное сияние чистого разума ",
         CartId: 1,
         year: 2004,
@@ -194,7 +191,7 @@ function onSortChange(id) {
 }
 
 //сортировка для кнопки новинки
-function newMovies (id) {
+function newMovies () {
     let newFilms = [];
     filteredMovies.forEach(item => {
         newFilms.push(item);

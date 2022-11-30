@@ -7,15 +7,9 @@
     <list default="true" id="29d1fe51-46cf-4428-a49a-b89293b16872" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/page1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/page1/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/page2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/page3/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page4/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/page4/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page5/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/page5/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page6/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/page6/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page7/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/page7/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page8/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/page8/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page9/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/page9/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +76,7 @@
       <workItem from="1669699664327" duration="31000" />
       <workItem from="1669746862284" duration="8653000" />
       <workItem from="1669816128413" duration="2785000" />
-      <workItem from="1669821275361" duration="8434000" />
+      <workItem from="1669821275361" duration="9435000" />
     </task>
     <servers />
   </component>

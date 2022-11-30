@@ -63,7 +63,8 @@ class widget {
         ]
 
         function isEmpty(obj) {
-            for (var x in obj) { return false; }
+            for (var x in obj)
+            { return false; }
             return true;
         }
 
@@ -949,7 +950,6 @@ function showDialog({title, message, buttons, data, state = false, style, method
 
         window.appendChild(bottomButtons)
         _modelDi.appendChild(window)
-
         _modelDi.onscroll = function (e) {
             widget.dialogHeight[title] = _modelDi.scrollTop
         }
