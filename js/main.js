@@ -1,6 +1,6 @@
 // "use strict";
 //массив с объектами
-let movies = [{
+const movies = [{
         title: "Вечное сияние чистого разума ",
         CartId: 1,
         year: 2004,
