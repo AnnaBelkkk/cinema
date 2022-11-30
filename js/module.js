@@ -527,7 +527,12 @@ function newshowDialog2() {
             }
         })
 }
-
+function newshowDialog3() {
+    showDialog({
+    title: 'нет результатов',
+}
+)
+}
 
 function showDialog({title, message, buttons, data, state = false, style, methods, form_request, nav}) {
     return new Promise(function(resolve, reject) {

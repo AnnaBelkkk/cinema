@@ -79,7 +79,7 @@ let activeFilters = [];
 
 console.log(movies[0])
 
-
+let ii = 0;
 
 function films(moviesForPaint) {
     document.querySelector(".content2").innerHTML = ''; //очищаем
@@ -89,6 +89,7 @@ function films(moviesForPaint) {
     const content2 = document.querySelector(".content2");
     let i = 0;
     let cartsCont = document.createElement("div");
+    if (moviesForPaint.length > 0){ //подобится для вывода "нет результатов"
     moviesForPaint.forEach(item => { //проходимся по объектам массива
         i++;
         if (i > 3) {
@@ -105,9 +106,15 @@ function films(moviesForPaint) {
                         <div class="rating">рейтинг: ${item.rating}</div>
                         <div class="year">год: ${item.year}</div>
          </div>` //перезаписываем в блок кусок кода
+
         cartsCont.append(carts1); //добавляем карточку в общий контейнер, где по три карточки
         content2.append(cartsCont);  //добавляем блоки с карточками в другой большой общий блок
     })
+    } else { //если нет результатов
+        newshowDialog3(); //вызов модального окна
+        filterResetClick(); //сброс фильторов
+    }
+
 }
 films(movies)
 
