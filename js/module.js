@@ -531,6 +531,8 @@ function newshowDialog2() {
               <input type="text" class="genre" placeholder="жанр" name="genre">
               <input type="text" class="age" placeholder="возрастное ограничение" name="age">
               <input type="text"  class="year" placeholder="год" name="year">
+              <input type="text"  class="content" placeholder="содержание" name="content">
+              <input type="text"  class="video" placeholder="трейлер" name="video">
                </form>`,
             buttons: {
                 'добавить': function(data){
