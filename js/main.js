@@ -121,9 +121,7 @@ function films(moviesForPaint) {
          <div class="imgandtext" id="cart${item.CartId}" onclick="getLocationHref(${item.CartId})">
                         <p class="titlecard">${item.title}</p>
                         <img class="imgcart" src="${'../img/cart'+item.CartId+'.jpg'}" alt="#">
-                        <div class="genre">жанр: ${item.genre}</div>
                         <div class="rating">рейтинг: ${item.rating}</div>
-                        <div class="year">год: ${item.year}</div>
          </div>` //перезаписываем в блок кусок кода
 
         cartsCont.append(carts1); //добавляем карточку в общий контейнер, где по три карточки
