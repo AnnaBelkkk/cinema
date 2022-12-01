@@ -277,7 +277,7 @@ function createBackButton() {
     let mainContent = document.querySelector(".header__content");
     let button  = document.createElement("button");
     button.classList.add('btn');
-    button.onclick = function () {window.location.href = 'file:///C:/%D1%83%D0%BF%D0%BF%D0%BF%D0%BF%D0%BF%D0%BF%D0%BF%D0%BF%D0%BF%20%D1%81%D0%B8%D0%BD%D0%B5%D0%BC%D0%B0/html/index.html';};
+    button.onclick = function () {window.location.href = 'https://annabelkkk.github.io/cinema/html/index.html';};
     button.innerText = "назад";
     mainContent.append(button);
 }
