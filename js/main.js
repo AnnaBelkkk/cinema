@@ -120,7 +120,7 @@ function films(moviesForPaint) {
         carts1.innerHTML = ` 
          <div class="imgandtext" id="cart${item.CartId}" onclick="getLocationHref(${item.CartId})">
                         <p class="titlecard">${item.title}</p>
-                        <img class="imgcart" src="${'../img/cart'+item.CartId+'.jpg'}" alt="#">
+                        <img class="imgcart" src="${'../img/cart'+item.CartId+'.png'}" alt="#">
                         <div class="rating">рейтинг: ${item.rating}</div>
          </div>` //перезаписываем в блок кусок кода
 
