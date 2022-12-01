@@ -511,14 +511,27 @@ class WidgetState {
     }
 }
 
+
+function form() {
+    let add = document.forms["idForm"].quarySelectAll("input[type='text']");
+    let newadd = [].map.call(add,  function(item) {
+        return {name : item.name, value : item.value};
+    })
+console.log(newadd);
+}
+
+
 function newshowDialog2() {
         showDialog({
             title: 'новый фильм',
-            message: `<input type="text" placeholder="название" name="title">
-              <input type="text" placeholder="рейтинг" name="rating">
-              <input type="text" placeholder="жанр" name="genre">
-              <input type="text" placeholder="возрастное ограничение" name="age">
-              <input type="text" placeholder="год" name="year">`,
+            message: `
+            <form id ="idForm">
+            <input type="text"  placeholder="название" name="title">
+              <input type="text" class="rating" placeholder="рейтинг" name="rating">
+              <input type="text" class="genre" placeholder="жанр" name="genre">
+              <input type="text" class="age" placeholder="возрастное ограничение" name="age">
+              <input type="text"  class="year" placeholder="год" name="year">
+               </form>`,
             buttons: {
                 'добавить': function(data){
                     // Проверка данных
