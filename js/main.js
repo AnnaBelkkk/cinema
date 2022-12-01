@@ -137,9 +137,9 @@ films(movies)
 
 
 
-function getLocationHref(t) {
-    window.location.href = `../page${t}/index.html`;
-} //функция для перехода на новую страницу при клике на карточку
+// function getLocationHref(t) {
+//     window.location.href = `../page${t}/index.html`;
+// } //функция для перехода на новую страницу при клике на карточку
 
 
 //функция на изменение значений в селекте, передавая айди и имя
@@ -229,3 +229,70 @@ function onSortChange(id) {
 //
 // import { form } from './../js/module.js';
 // console.log((form()))
+
+
+//функцтя для нового окна
+function newPage(id) {
+    // window.location.href = `../page${t}/index.html`;
+    createBackButton();
+    let movie = movies.filter(t => t.CardId == id)[0]; //передача параметра из объекта
+    let mainContent = document.querySelector(".main__content");
+    let filmInfo = document.createElement("div");
+    if (movie.img != null) {
+        filmInfo.append(createImgElement(movie));
+    }
+    filmInfo.append(createImgElement(movie))
+        if (movie.video != null) {
+            filmInfo.append(createElementTraler(movie));
+        }
+        for (let i = 0; i < mainContent.children.length; i++){
+            mainContent.children[i].style.display = 'none';
+        }
+}
+
+newPage()
+
+//функция для изображения
+function createImgElement(movie) {
+    let filmImg = document.createElement("div");
+    filmImg.classList.add('img');
+    filmImg.innerHTML = `<p class="text">${movie.title}</p><br>`;
+    if (movie.img != null) {
+        filmImg.innerHTML = filmImg.innerHTML + `<img alt="#" srs=${movie.img}" class ="imgcart">`
+    }
+    return filmImg;
+}
+
+//функция для кнопки
+function createBackButton() {
+    let mainContent = document.querySelector(".header__content");
+    let button  = document.createElement("button");
+    button.classList.add('btn');
+    button.onclick = function () {window.location.href = 'https://annabelkkk.github.io/cinema/html/index.html';};
+    button.innerText = "назад";
+    mainContent.append(button);
+}
+
+//функция для информации
+function createFilmInfo(movie) {
+    let filmInfo = document.createElement("div");
+    filmInfo.classList.add('contenttext');
+    filmInfo.innerText = `
+           <p class="text">Рейтинг:  ${movie.rating}</p>
+           <p class="text">Возраст:${movie.age}</p>
+           <p class="text">Год производства: ${movie.year}</p>
+           <p class="text">Жанр: ${movie.genre}</p>
+           <p class="text">Содержание: <br> ${movie.content} </p>
+    `
+    return filmInfo;
+}
+
+//функция для трейлера
+function createElementTraler(movie) {
+    let filmTrailer = document.createElement("div");
+    filmTrailer.classList.add('play');
+    filmTrailer.innerHTML = ` <p class = "text">Трейлер: </p>
+<br>
+<iframe id="playVideo" width="560" height="315" src="${movie.video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+return filmTrailer;
+}
