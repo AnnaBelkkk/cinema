@@ -253,9 +253,17 @@ function newPage(id) {
 newPage()
 
 //функция для изображения
+function createImgElement(movie) {
+    let filmImg = document.createElement("div");
+    filmImg.classList.add('img');
+    filmImg.innerHTML = `<p class="text">${movie.title}</p><br>`;
+    if (movie.img != null) {
+        filmImg.innerHTML = filmImg.innerHTML + `<img alt="#" srs=${movie.img}" class ="imgcart">`
+    }
+    return filmImg;
+}
 
-
-//функция для кнопки
+//для конпки
 function createBackButton() {
     let mainContent = document.querySelector(".header__content");
     let button  = document.createElement("button");
@@ -266,18 +274,18 @@ function createBackButton() {
 }
 
 //функция для информации
-function createFilmInfo(movie) {
-    let filmInfo = document.createElement("div");
-    filmInfo.classList.add('contenttext');
-    filmInfo.innerText = `
-           <p class="text">Рейтинг:  ${movie.rating}</p>
-           <p class="text">Возраст:${movie.age}</p>
-           <p class="text">Год производства: ${movie.year}</p>
-           <p class="text">Жанр: ${movie.genre}</p>
-           <p class="text">Содержание: <br> ${movie.content} </p>
-    `
-    return filmInfo;
-}
+// function createFilmInfo(movie) {
+//     let filmInfo = document.createElement("div");
+//     filmInfo.classList.add('contenttext');
+//     filmInfo.innerText = `
+//            <p class="text">Рейтинг:  ${movie.rating}</p>
+//            <p class="text">Возраст:${movie.age}</p>
+//            <p class="text">Год производства: ${movie.year}</p>
+//            <p class="text">Жанр: ${movie.genre}</p>
+//            <p class="text">Содержание: <br> ${movie.content} </p>
+//     `
+//     return filmInfo;
+// }
 
 //функция для трейлера
 function createElementTraler(movie) {
