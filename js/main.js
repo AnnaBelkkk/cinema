@@ -300,7 +300,7 @@ function createFilmInfo(movie) {
 function createElementTraler(movie) {
     let filmTrailer = document.createElement("div");
     filmTrailer.classList.add('play');
-    filmTrailer.innerHTML = ` <p class = "text">Трейлер: </p>
+    filmTrailer.innerHTML = ` <p class = "text">Трейлер:</p>
 <br>
 <iframe id="playVideo" width="560" height="315" src="${movie.video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
 return filmTrailer;

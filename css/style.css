@@ -68,9 +68,16 @@ body {
     box-shadow:8px 10px 10px #28203D;
 }
 .imgca{
-    width: 350px;
-    height: 250px;
+
+    border: 0px solid pink;
 }
+.contenttext{
+    border: 0px solid red;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .imgandtext{
     width: 350px;
     height:360px;
@@ -182,7 +189,6 @@ a{
     margin-top: 150px;
     border: 0px solid darkred;
     display: flex;
-    justify-content: center;
 }
 .rating,.genre,.year{
     font-size: 20px;
