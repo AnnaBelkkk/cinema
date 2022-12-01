@@ -1,3 +1,6 @@
+
+
+
 class widget {
     static defaultTag = 'div'
     static lastDialog = null;
