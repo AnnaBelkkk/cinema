@@ -526,7 +526,7 @@ console.log(newadd);
 
 function newshowDialog2() {
         showDialog({
-            title: 'новый фильм',
+            title: 'новый фильм (не работает)',
             message: `
             <form id ="idForm">
             <input type="text"  placeholder="название" name="title">

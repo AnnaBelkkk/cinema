@@ -7,7 +7,7 @@ const movies = [{
         age: 16,
         genre: 'драма',
         rating: 8,
-        img: "../img/cart1.jpg",
+        img: "../img/cart1.png",
         video: "https://www.youtube.com/embed/hTIrC9875u8",
         content: 'Застенчивый и меланхоличный Джоэл живёт ничем не примечательной серой и унылой жизнью. Но однажды вместо привычного рабочего маршрута молодой человек вдруг садится на электричку в другом направлении и устремляется к морю. На песчаном берегу Джоэл замечает девушку с ярко-синими волосами. На обратном пути они знакомятся в вагоне электрички и парень понимает, что у них с Клементиной очень много общего.'
 },
@@ -18,6 +18,7 @@ const movies = [{
         age: 18,
         genre: 'триллер',
         rating: 7,
+        img: "../img/cart2.png",
         video: "https://www.youtube.com/embed/SDhGly0CgvQ",
         content:'Великолепный водитель – при свете дня он выполняет каскадерские трюки на съёмочных площадках Голливуда, а по ночам ведет рискованную игру. Но один опасный контракт – и за его жизнь назначена награда. Теперь, чтобы остаться в живых и спасти свою очаровательную соседку, он должен делать то, что умеет лучше всего – виртуозно уходить от погони.'
 
@@ -29,6 +30,7 @@ const movies = [{
         age: 16,
         genre: 'триллер',
         rating: 6,
+        img: "../img/cart3.png",
         video:"https://www.youtube.com/embed/15sqcPRjUhU",
         content:'Кибертехнологии подчинили себе все сферы жизни, а самые опасные преступники переместились в виртуальное пространство. Киборг-гибрид, стоящий во главе элитного подразделения полиции, идет по следу могущественного хакера.'
     },
@@ -39,6 +41,7 @@ const movies = [{
         age: 16,
         genre: 'криминал',
         rating: 9,
+        img: "../img/cart4.png",
         video: "https://www.youtube.com/embed/TODt_q-_4C4",
         content: 'Пол Эджкомб — начальник блока смертников в тюрьме «Холодная гора», каждый из узников которого однажды проходит «зеленую милю» по пути к месту казни. Пол повидал много заключённых и надзирателей за время работы. Однако гигант Джон Коффи, обвинённый в страшном преступлении, стал одним из самых необычных обитателей блока.'
     },
@@ -49,6 +52,7 @@ const movies = [{
         age: 18,
         genre: 'криминал',
         rating: 9,
+        img: "../img/cart5.png",
         video: "https://www.youtube.com/embed/C7-7qQ61QHU",
         content: 'Сотрудник страховой компании страдает хронической бессонницей и отчаянно пытается вырваться из мучительно скучной жизни. Однажды в очередной командировке он встречает некоего Тайлера Дёрдена — харизматического торговца мылом с извращенной философией. Тайлер уверен, что самосовершенствование — удел слабых, а единственное, ради чего стоит жить, — саморазрушение.'
     },
@@ -59,6 +63,7 @@ const movies = [{
         age: 18,
         genre: 'комедия',
         rating: 9,
+        img: "../img/cart6.png",
         video: "https://www.youtube.com/embed/FvvOBZq_Oog",
         content: 'Один ушлый американец ещё со студенческих лет приторговывал наркотиками, а теперь придумал схему нелегального обогащения с использованием поместий обедневшей английской аристократии и очень неплохо на этом разбогател. Другой пронырливый журналист приходит к Рэю, правой руке американца, и предлагает тому купить киносценарий, в котором подробно описаны преступления его босса.'
     },
@@ -69,6 +74,7 @@ const movies = [{
         age: 16,
         genre: 'ужасы',
         rating: 8,
+        img: "../img/cart7.png",
         video: "https://www.youtube.com/embed/ZvyFI0coh6M",
         content: 'Нью-Йорк, 1799 год. Икабода Крэйна, молодого констебля, отправляют в местечко Сонная лощина для расследования загадочных убийств. Все жертвы, как сообщает местное население, погибают от меча всадника без головы.'
     },
@@ -79,6 +85,7 @@ const movies = [{
         age: 16,
         genre: 'детектив',
         rating: 8,
+        img: "../img/cart8.png",
         video: "https://www.youtube.com/embed/8VMvCavnFNw",
         content: 'На следующее утро после празднования 85-летия известного автора криминальных романов Харлана Тромби виновника торжества находят мёртвым. Налицо — явное самоубийство, но полиция по протоколу опрашивает всех присутствующих в особняке членов семьи, хотя, в этом деле больше заинтересован частный детектив Бенуа Блан.'
     },
@@ -89,6 +96,7 @@ const movies = [{
         age: 18,
         genre: 'ужасы',
         rating: 7,
+        img: "../img/cart9.png",
         video: "https://www.youtube.com/embed/r-ombnmA2xI",
         content: 'Доктора не могут найти лекарство от таинственного заболевания Шэрон, но её мать Роуз отказывается отдавать ребёнка в психиатрическую лечебницу. Вместе с дочерью она отправляется в Сайлент Хилл - город, название которого Шэрон постоянно твердит во сне. Роуз убеждена, что именно здесь она найдёт ответы, в которых так нуждается.'
     }
@@ -118,7 +126,7 @@ function films(moviesForPaint) {
         cartsCont.classList.add(`carts${i}`); //добавляем классы
         let carts1 = document.createElement("div"); //для каждой карточки добавляем дивы
         carts1.innerHTML = ` 
-         <div class="imgandtext" id="cart${item.CartId}" onclick="getLocationHref(${item.CartId})">
+         <div class="imgandtext" id="cart${item.CartId}" onclick="newPage(${item.CartId})">
                         <p class="titlecard">${item.title}</p>
                         <img class="imgcart" src="${'../img/cart'+item.CartId+'.png'}" alt="#">
                         <div class="rating">рейтинг: ${item.rating}</div>
@@ -235,22 +243,23 @@ function onSortChange(id) {
 function newPage(id) {
     // window.location.href = `../page${t}/index.html`;
     createBackButton();
-    let movie = movies.filter(t => t.CardId == id)[0]; //передача параметра из объекта
+    let movie = movies.filter(t => t.CartId == id)[0]; //передача параметра из объекта
     let mainContent = document.querySelector(".main__content");
     let filmInfo = document.createElement("div");
     if (movie.img != null) {
         filmInfo.append(createImgElement(movie));
     }
-    filmInfo.append(createImgElement(movie))
+    filmInfo.append(createFilmInfo(movie))
         if (movie.video != null) {
             filmInfo.append(createElementTraler(movie));
         }
         for (let i = 0; i < mainContent.children.length; i++){
             mainContent.children[i].style.display = 'none';
         }
+    mainContent.append(filmInfo);
 }
 
-newPage()
+
 
 //функция для изображения
 function createImgElement(movie) {
@@ -258,7 +267,7 @@ function createImgElement(movie) {
     filmImg.classList.add('img');
     filmImg.innerHTML = `<p class="text">${movie.title}</p><br>`;
     if (movie.img != null) {
-        filmImg.innerHTML = filmImg.innerHTML + `<img alt="#" srs=${movie.img}" class ="imgcart">`
+        filmImg.innerHTML = filmImg.innerHTML + `<img alt="#" srs=${movie.img}" class ="imgca">`
     }
     return filmImg;
 }
@@ -268,7 +277,7 @@ function createBackButton() {
     let mainContent = document.querySelector(".header__content");
     let button  = document.createElement("button");
     button.classList.add('btn');
-    button.onclick = function () {window.location.href = 'https://annabelkkk.github.io/cinema/html/index.html';};
+    button.onclick = function () {window.location.href = 'file:///C:/%D1%83%D0%BF%D0%BF%D0%BF%D0%BF%D0%BF%D0%BF%D0%BF%D0%BF%D0%BF%20%D1%81%D0%B8%D0%BD%D0%B5%D0%BC%D0%B0/html/index.html';};
     button.innerText = "назад";
     mainContent.append(button);
 }
@@ -277,7 +286,7 @@ function createBackButton() {
 function createFilmInfo(movie) {
     let filmInfo = document.createElement("div");
     filmInfo.classList.add('contenttext');
-    filmInfo.innerText = `
+    filmInfo.innerHTML = `
            <p class="text">Рейтинг:  ${movie.rating}</p>
            <p class="text">Возраст:${movie.age}</p>
            <p class="text">Год производства: ${movie.year}</p>
