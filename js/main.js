@@ -253,15 +253,7 @@ function newPage(id) {
 newPage()
 
 //функция для изображения
-function createImgElement(movie) {
-    let filmImg = document.createElement("div");
-    filmImg.classList.add('img');
-    filmImg.innerHTML = `<p class="text">${movie.title}</p><br>`;
-    if (movie.img != null) {
-        filmImg.innerHTML = filmImg.innerHTML + `<img alt="#" srs=${movie.img}" class ="imgcart">`
-    }
-    return filmImg;
-}
+
 
 //функция для кнопки
 function createBackButton() {
