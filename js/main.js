@@ -243,7 +243,7 @@ function onSortChange(id) {
 //функцтя для нового окна
 function newPage(id) {
     // window.location.href = `../page${t}/index.html`;
-    createBackButton();
+    createBackButton(); //вызов функции с кнопкой
     let movie = movies.filter(t => t.CartId == id)[0]; //передача параметра из объекта
     let mainContent = document.querySelector(".main__content"); //находим элемент с классом main__content
     let filmInfo = document.createElement("div"); //создаем для будущих элементов див
@@ -268,41 +268,42 @@ function createImgElement(movie) { //функции передаем масси�
     filmImg.classList.add('img'); //добавляем блоку класс img
     filmImg.innerHTML = `<p class="text">${movie.title}</p><br>`; //переписываем значение на эту часть кода со свойством для названия
     if (movie.img != null) { //если свойство с изображением не пустое, то
-        filmImg.innerHTML = filmImg.innerHTML + `<img alt="#" src="${movie.img}" class ="imgca">`
+        filmImg.innerHTML = filmImg.innerHTML + `<img alt="#" src="${movie.img}" class ="imgca">` //плюс к этому вписываем само изображение
     }
-    return filmImg;
+    return filmImg; // возвращаем блок
 }
 
 //для конпки
 function createBackButton() {
-    let mainContent = document.querySelector(".header__content");
-    let button  = document.createElement("button");
-    button.classList.add('btn');
-    button.onclick = function () {window.location.href = 'https://annabelkkk.github.io/cinema/html/index.html';};
-    button.innerText = "назад";
-    mainContent.append(button);
+    let mainContent = document.querySelector(".header__content"); //находим блок с классом
+    let button  = document.createElement("button"); //создаем кнопку
+    button.classList.add('btn'); //добавляем ей класс
+    button.onclick = function () {window.location.href = 'https://annabelkkk.github.io/cinema/html/index.html';}; //при нажатии срабатывает функция на переход, на новое окно по ссылке
+    button.innerText = "назад"; //текст внутри кнопки
+    mainContent.append(button); //добавляем в блок кнопку
 }
 
 //функция для информации
-function createFilmInfo(movie) {
-    let filmInfo = document.createElement("div");
-    filmInfo.classList.add('contenttext');
-    filmInfo.innerHTML = `
+function createFilmInfo(movie) { //функция для содержания и характеристик с переданным массивом
+    let filmInfo = document.createElement("div"); // создаем блок див
+    filmInfo.classList.add('contenttext'); //добавляем класс для блока
+    filmInfo.innerHTML = ` 
            <p class="text">Рейтинг:  ${movie.rating}</p>
            <p class="text">Возраст:${movie.age}</p>
            <p class="text">Год производства: ${movie.year}</p>
            <p class="text">Жанр: ${movie.genre}</p>
            <p class="text">Содержание: <br> ${movie.content} </p>
-    `
-    return filmInfo;
+    ` //вписываем эти значения с переданными свойствами
+    return filmInfo; //возвращаем блок
 }
 
 //функция для трейлера
-function createElementTraler(movie) {
-    let filmTrailer = document.createElement("div");
-    filmTrailer.classList.add('play');
-    filmTrailer.innerHTML = ` <p class = "text">Трейлер:</p>
+function createElementTraler(movie) { //функция для трейлера с переданным массивом
+    let filmTrailer = document.createElement("div"); //создаем блок див
+    filmTrailer.classList.add('play'); //добавляем ему класс
+    filmTrailer.innerHTML = ` <p class = "text">Трейлер:</p> 
 <br>
 <iframe id="playVideo" width="560" height="315" src="${movie.video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
-return filmTrailer;
+        //вписываем само содержание блока с меняющейся ссылкой для каждого свойсва и блока
+    return filmTrailer; //возвращаем
 }
