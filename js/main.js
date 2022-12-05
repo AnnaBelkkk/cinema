@@ -216,6 +216,7 @@ function onSortChange(id) {
     // если сортировка указана, то отсортировывем
     if (filterValue == "asc") {
         sortedMovies.sort((a, b) => a.rating - b.rating); //по возрастанию
+
     } else if (filterValue == "desc") {
         sortedMovies.sort((a, b) => b.rating - a.rating);//по убыванию
     }
@@ -244,30 +245,30 @@ function newPage(id) {
     // window.location.href = `../page${t}/index.html`;
     createBackButton();
     let movie = movies.filter(t => t.CartId == id)[0]; //передача параметра из объекта
-    let mainContent = document.querySelector(".main__content");
-    let filmInfo = document.createElement("div");
-    if (movie.img != null) {
-        filmInfo.append(createImgElement(movie));
+    let mainContent = document.querySelector(".main__content"); //находим элемент с классом main__content
+    let filmInfo = document.createElement("div"); //создаем для будущих элементов див
+    if (movie.img != null) { // если свойство со значением для изображения не равно нулл, то
+        filmInfo.append(createImgElement(movie)); // то добавляем в наш блок див изображение, через вызов функции сделанной для изображения
     }
-    filmInfo.append(createFilmInfo(movie))
-        if (movie.video != null) {
-            filmInfo.append(createElementTraler(movie));
+    filmInfo.append(createFilmInfo(movie)) //добавляем в блок див содержание и характеристики с помощью функции отвечающей за жанр, содержание и тд
+        if (movie.video != null) { // если наше свойство видео не пустое, то
+            filmInfo.append(createElementTraler(movie)); // то добавляем с помощью вызова фукнции отвечающей за трейлер, сам трейлер
         }
         for (let i = 0; i < mainContent.children.length; i++){
-            mainContent.children[i].style.display = 'none';
+            mainContent.children[i].style.display = 'none'; //проходимся по элементам массива, чтобы присвоить дочерним элементам display = 'none', чтобы скрыть их со страницы, это меню и карточки
         }
-    mainContent.append(filmInfo);
+    mainContent.append(filmInfo); //в блок добавляем наш блок с добавленными характеристиками
 }
 
 
 
 //функция для изображения
-function createImgElement(movie) {
-    let filmImg = document.createElement("div");
-    filmImg.classList.add('img');
-    filmImg.innerHTML = `<p class="text">${movie.title}</p><br>`;
-    if (movie.img != null) {
-        filmImg.innerHTML = filmImg.innerHTML + `<img alt="#" srs=${movie.img}" class ="imgca">`
+function createImgElement(movie) { //функции передаем массив
+    let filmImg = document.createElement("div");//создаем блок див
+    filmImg.classList.add('img'); //добавляем блоку класс img
+    filmImg.innerHTML = `<p class="text">${movie.title}</p><br>`; //переписываем значение на эту часть кода со свойством для названия
+    if (movie.img != null) { //если свойство с изображением не пустое, то
+        filmImg.innerHTML = filmImg.innerHTML + `<img alt="#" src="${movie.img}" class ="imgca">`
     }
     return filmImg;
 }
