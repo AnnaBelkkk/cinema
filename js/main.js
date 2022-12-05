@@ -240,7 +240,7 @@ function onSortChange(id) {
 // console.log((form()))
 
 
-//функцтя для нового окна
+//функцтя для перерисовки дива
 function newPage(id) {
     // window.location.href = `../page${t}/index.html`;
     createBackButton(); //вызов функции с кнопкой
@@ -270,7 +270,7 @@ function createImgElement(movie) { //функции передаем масси�
     if (movie.img != null) { //если свойство с изображением не пустое, то
         filmImg.innerHTML = filmImg.innerHTML + `<img alt="#" src="${movie.img}" class ="imgca">` //плюс к этому вписываем само изображение
     }
-    return filmImg; // возвращаем блок
+    return filmImg; // возвращаем блок, полученный результат для объекта, когда мы перерисовываем дивы
 }
 
 //для конпки
@@ -278,7 +278,7 @@ function createBackButton() {
     let mainContent = document.querySelector(".header__content"); //находим блок с классом
     let button  = document.createElement("button"); //создаем кнопку
     button.classList.add('btn'); //добавляем ей класс
-    button.onclick = function () {window.location.href = 'https://annabelkkk.github.io/cinema/html/index.html';}; //при нажатии срабатывает функция на переход, на новое окно по ссылке
+    button.onclick = function () {window.location.href = 'https://annabelkkk.github.io/cinema/html/index.html';}; //при нажатии срабатывает функция на переход по ссылке
     button.innerText = "назад"; //текст внутри кнопки
     mainContent.append(button); //добавляем в блок кнопку
 }
@@ -294,7 +294,7 @@ function createFilmInfo(movie) { //функция для содержания и
            <p class="text">Жанр: ${movie.genre}</p>
            <p class="text">Содержание: <br> ${movie.content} </p>
     ` //вписываем эти значения с переданными свойствами
-    return filmInfo; //возвращаем блок
+    return filmInfo; //возвращаем блок, полученный результат для объекта, когда мы перерисовываем дивы
 }
 
 //функция для трейлера
@@ -305,5 +305,5 @@ function createElementTraler(movie) { //функция для трейлера �
 <br>
 <iframe id="playVideo" width="560" height="315" src="${movie.video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
         //вписываем само содержание блока с меняющейся ссылкой для каждого свойсва и блока
-    return filmTrailer; //возвращаем
+    return filmTrailer; //возвращаем, полученный результат для объекта, когда мы перерисовываем дивы
 }
