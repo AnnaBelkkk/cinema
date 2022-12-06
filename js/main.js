@@ -181,15 +181,15 @@ function onFilterChange(id, name) {
 //фильтровать массив, перерисовывать или добавлять фильтры
 function filterCarts(filter, needRefilter) {
     let buffColl = movies;
-    if (activeFilters.length > 0 && !needRefilter) {
-        buffColl = filteredMovies;
+    if (activeFilters.length > 0 && !needRefilter) { //если массив с текущими фильстрами activeFilters содержит значения и переменная needRefilter =false,
+        buffColl = filteredMovies;//временному массиву присвоем массив с отфильтрованными значениями
     } else {
-        activeFilters.forEach(item => {
+        activeFilters.forEach(item => { // иначе для каждого фильтора из массива текущих фильторов запустим текущую функцию, с указанным needRefilter = false
             filterCarts(item, false);
         })
         return;
     }
-    filteredMovies = buffColl.filter(t => t[filter.name] == filter.value);
+    filteredMovies = buffColl.filter(t => t[filter.name] == filter.value); //присвоем массиву с отфильтрованными значениями результат фильтрации временного массива
 }
 
 
@@ -222,6 +222,7 @@ function onSortChange(id) {
     }
     films(sortedMovies);
 }
+//сокращенная запись функции вида arr.sort(function(a, b) { return a - b; });
 
 //сортировка для кнопки новинки
 // function newMovies () {
@@ -240,11 +241,11 @@ function onSortChange(id) {
 // console.log((form()))
 
 
-//функцтя для перерисовки дива
+//функцтя для отображения блока с информацией о фильме
 function newPage(id) {
     // window.location.href = `../page${t}/index.html`;
     createBackButton(); //вызов функции с кнопкой
-    let movie = movies.filter(t => t.CartId == id)[0]; //передача параметра из объекта
+    let movie = movies.filter(t => t.CartId == id)[0]; //фильтрация массива movies по свойству CartId
     let mainContent = document.querySelector(".main__content"); //находим элемент с классом main__content
     let filmInfo = document.createElement("div"); //создаем для будущих элементов див
     if (movie.img != null) { // если свойство со значением для изображения не равно нулл, то
@@ -257,13 +258,13 @@ function newPage(id) {
         for (let i = 0; i < mainContent.children.length; i++){
             mainContent.children[i].style.display = 'none'; //проходимся по элементам массива, чтобы присвоить дочерним элементам display = 'none', чтобы скрыть их со страницы, это меню и карточки
         }
-    mainContent.append(filmInfo); //в блок добавляем наш блок с добавленными характеристиками
+    mainContent.append(filmInfo); //в блок main__content добавляем созданный блок с информацией о фильме
 }
 
 
 
 //функция для изображения
-function createImgElement(movie) { //функции передаем массив
+function createImgElement(movie) { //функции передаем объект массива movies
     let filmImg = document.createElement("div");//создаем блок див
     filmImg.classList.add('img'); //добавляем блоку класс img
     filmImg.innerHTML = `<p class="text">${movie.title}</p><br>`; //переписываем значение на эту часть кода со свойством для названия
@@ -278,13 +279,13 @@ function createBackButton() {
     let mainContent = document.querySelector(".header__content"); //находим блок с классом
     let button  = document.createElement("button"); //создаем кнопку
     button.classList.add('btn'); //добавляем ей класс
-    button.onclick = function () {window.location.href = 'https://annabelkkk.github.io/cinema/html/index.html';}; //при нажатии срабатывает функция на переход по ссылке
+    button.onclick = function () {window.location.href = 'https://annabelkkk.github.io/cinema/html/index.html';}; //присваиваем функцию на событие нажатия кнопки, в ходе работы функции перезагрузится текущая страница на указанную ссылку
     button.innerText = "назад"; //текст внутри кнопки
     mainContent.append(button); //добавляем в блок кнопку
 }
 
 //функция для информации
-function createFilmInfo(movie) { //функция для содержания и характеристик с переданным массивом
+function createFilmInfo(movie) { //функция для содержания и характеристик с переданным объектом массива
     let filmInfo = document.createElement("div"); // создаем блок див
     filmInfo.classList.add('contenttext'); //добавляем класс для блока
     filmInfo.innerHTML = ` 
@@ -293,17 +294,17 @@ function createFilmInfo(movie) { //функция для содержания и
            <p class="text">Год производства: ${movie.year}</p>
            <p class="text">Жанр: ${movie.genre}</p>
            <p class="text">Содержание: <br> ${movie.content} </p>
-    ` //вписываем эти значения с переданными свойствами
+    ` //меняем содержимое хтмл блока с указанными свойствами переданного функции объекта
     return filmInfo; //возвращаем блок, полученный результат для объекта, когда мы перерисовываем дивы
 }
 
 //функция для трейлера
-function createElementTraler(movie) { //функция для трейлера с переданным массивом
+function createElementTraler(movie) { //функция для трейлера с переданным объектом массива
     let filmTrailer = document.createElement("div"); //создаем блок див
     filmTrailer.classList.add('play'); //добавляем ему класс
     filmTrailer.innerHTML = ` <p class = "text">Трейлер:</p> 
 <br>
 <iframe id="playVideo" width="560" height="315" src="${movie.video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
-        //вписываем само содержание блока с меняющейся ссылкой для каждого свойсва и блока
+        //меняем содержимое хтмл блока с указанными свойствами переданного функции объекта
     return filmTrailer; //возвращаем, полученный результат для объекта, когда мы перерисовываем дивы
 }
