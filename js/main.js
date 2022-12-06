@@ -107,7 +107,7 @@ let activeFilters = [];
 
 console.log(movies[0])
 
-
+//функция для отрисовки карточек
 function films(moviesForPaint) {
     document.querySelector(".content2").innerHTML = ''; //очищаем
     if (moviesForPaint == null) {
