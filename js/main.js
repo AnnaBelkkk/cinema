@@ -153,9 +153,12 @@ films(movies)
 //функция на изменение значений в селекте, передавая айди и имя
 function onFilterChange(id, name) {
     let filterValue = document.getElementById(id).value; //получаем значение по айди
+    console.log(filterValue)
     let filter = { filterName: id, value: filterValue, name: name };
+    console.log(filter)
     let fiterIndex = activeFilters.findIndex(t => t.filterName == id); //находим индекс массива соответсвующий функции,находим индекс элементов в коллекции, где элемент.фильтрнейм равен ид
     //так как мы берем пустой массив, он будет в дальнейшем заполнятся фильтрами, которые мы выбираем
+    console.log(filterValue)
     if (filterValue === "default") {
         if (fiterIndex > -1) {
             activeFilters.splice(fiterIndex, 1);
@@ -175,6 +178,7 @@ function onFilterChange(id, name) {
         filterCarts(filter, true);
     } //при изменении фильтра перерисовываем фильтры
     onSortChange("ratingFilter", "rating"); //запуск функции по сортировке
+    //Сортируем после фильтрации итоговую коллекцию
 }
 //проще говоря фильтруем отфильтрованные объекты
 
@@ -189,7 +193,7 @@ function filterCarts(filter, needRefilter) {
         })
         return;
     }
-    filteredMovies = buffColl.filter(t => t[filter.name] == filter.value); //присвоем массиву с отфильтрованными значениями результат фильтрации временного массива
+    filteredMovies = buffColl.filter(t => t[filter.name] == filter.value); //присвоим массиву с отфильтрованными значениями результат фильтрации временного массива
 }
 
 
@@ -200,7 +204,7 @@ function filterResetClick() {
         filterEls[i].value = "default";
     }
     filteredMovies = movies; //фильтрованому массиву изначальный массив, для обнуления
-    activeFilters = []; //очещаем массив с использованными фильтрами
+    activeFilters = []; //очищаем массив с использованными фильтрами
     films(movies); //снова отрисовываем
 }
 
@@ -213,7 +217,7 @@ function onSortChange(id) {
     filteredMovies.forEach(item => {
         sortedMovies.push(item);
     });
-    // если сортировка указана, то отсортировывем
+    // если сортировка указана, то отсортировываем
     if (filterValue == "asc") {
         sortedMovies.sort((a, b) => a.rating - b.rating); //по возрастанию
 
