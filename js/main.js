@@ -102,7 +102,7 @@ const movies = [{
     }
 ]
 let filteredMovies = movies;
-filteredMovies.sort((a, b) => b.year - a.year); //сортируем по убыванию рейтинг
+filteredMovies.sort((a, b) => b.year - a.year); //сортируем по убыванию год
 let activeFilters = [];
 
 console.log(movies[0])
